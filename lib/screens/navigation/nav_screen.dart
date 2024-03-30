@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:myapp/constants.dart';
+// import 'package:myapp/color_scheme.dart';
 
 class NavScreen extends StatefulWidget {
   const NavScreen({super.key});
@@ -25,7 +25,9 @@ class _NavScreenState extends State<NavScreen> {
       // Appbar
       appBar: AppBar(
         title: SvgPicture.asset(
-          'assets/eco_chain_logo_green.svg',
+          MediaQuery.of(context).platformBrightness == Brightness.light
+              ? 'assets/eco_chain_logo_green.svg'
+              : 'assets/eco_chain_logo.svg',
           height: kToolbarHeight * 1.8,
         ),
       ),
@@ -36,15 +38,7 @@ class _NavScreenState extends State<NavScreen> {
       ),
 
       // Bottom Navigation Bar
-      bottomNavigationBar: Theme(
-          data: Theme.of(context).copyWith(
-            canvasColor: kSecondaryColor,
-            bottomNavigationBarTheme: const BottomNavigationBarThemeData(
-              selectedItemColor: kButtonColor,
-              unselectedItemColor: kBackgroundColor,
-            ),
-          ),
-          child: buildBottomNav()),
+      bottomNavigationBar: buildBottomNav(),
     );
   }
 
