@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:myapp/theme.dart';
+import 'package:myapp/constants.dart';
 
 class NavScreen extends StatefulWidget {
   const NavScreen({super.key});
@@ -22,15 +22,12 @@ class _NavScreenState extends State<NavScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: kBackgroundColor,
-
       // Appbar
       appBar: AppBar(
         title: SvgPicture.asset(
           'assets/eco_chain_logo_green.svg',
           height: kToolbarHeight * 1.8,
         ),
-        backgroundColor: kBackgroundColor,
       ),
 
       // Body

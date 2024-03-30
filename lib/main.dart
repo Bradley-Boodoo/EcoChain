@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:myapp/screens/splash/splash_screen.dart';
+import 'package:myapp/theme/theme.dart';
 
 void main() {
   runApp(const MyApp());
@@ -12,13 +13,9 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(
-          seedColor: const Color.fromARGB(150, 0, 248, 236),
-        ),
-        useMaterial3: true,
-      ),
+      themeMode: ThemeMode.system,
+      theme: EcoTheme.lightTheme,
+      darkTheme: EcoTheme.darkTheme,
       home: const SplashScreen(),
     );
   }
