@@ -30,10 +30,23 @@ class EcoTheme {
     brightness: Brightness.dark,
     colorScheme: colorSchemeDark,
     canvasColor: colorSchemeDark.secondary,
+
+    // AppBar Theme
     appBarTheme:
         AppBarTheme(backgroundColor: colorSchemeDark.background, elevation: 0),
     bottomNavigationBarTheme: bottomNavBarTheme,
+
+    // Text Theme
     textTheme: EcoTextTheme.darkTextTheme,
     fontFamily: GoogleFonts.ubuntu().fontFamily,
+
+    // Elevated Button Theme
+    elevatedButtonTheme: ElevatedButtonThemeData(
+      style: ElevatedButton.styleFrom(
+        backgroundColor: colorSchemeDark.surface,
+        foregroundColor: colorSchemeDark.onSurface,
+        elevation: 0.5,
+      ),
+    ),
   );
 }
